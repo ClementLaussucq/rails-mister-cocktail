@@ -1,22 +1,28 @@
 <div class="container">
-  <h1><%= @cocktail.name  %></h1>
+     <i class="fas fa-glass-cheers"></i>Congratulation you 've made a great choice<i class="fas fa-glass-cheers"></i>
+    <br>
+    <div class="inline_elements">
+      <i class="fas fa-cocktail"></i>
+      <span><%=@cocktail.name %> <%=@cocktail.name %> <%=@cocktail.name %></span>
+      <i class="fas fa-cocktail"></i>
+    </div>
+</div>
+
   <div class="card-product">
     <img src="https://images.unsplash.com/photo-1485265449635-ca623a55e95c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60">
 
     <div class="card-product-infos">
       <h2><%= @cocktail.name  %></h2>
       <p>Product description with <strong>relevant info</strong> only.</p>
-      <li> <% @cocktail.doses.each do |dose| %>
-        <%= dose.ingredient.name %></li>
+      <% @cocktail.doses.each do |dose| %>
+        <li> - <%= dose.ingredient.name %></li>
         <% end %>
     </div>
 
     <div class="card-product-action">
-        <a<%= link_to "add an ingredient", new_cocktail_dose_path(@cocktail)%>>
-          <i class="fas fa-pencil-alt"></i>
-        </a>
+        <%= link_to "add an ingredient", new_cocktail_dose_path(@cocktail)%>
+        <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, new_cocktail_dose_path(@cocktail)%>
         <a href= <%="new_cocktail_dose_path(@cocktail)"%> >Delete <i class="far fa-trash-alt"></i></a>
     </div>
   </div>
-</div>
 

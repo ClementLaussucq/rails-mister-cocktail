@@ -9,10 +9,12 @@
 
 <div class="container">
 <div class="cards" >
-  <%@cocktails.each do |cocktail| %>
+  <% @cocktails.each do |cocktail| %>
   <div class="row ">
     <div class="card-trip">
       <img src='https://images.unsplash.com/photo-1485265449635-ca623a55e95c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'>
+     <!--  <% i = 1 %>
+      <img src="/cocktail1.jpeg"> -->
       <div class="card-trip-infos">
         <div>
           <p><%= link_to cocktail.name, cocktail_path(cocktail)  %></p>
@@ -20,6 +22,7 @@
         </div>
         <h2 class="card-trip-pricing">€10</h2>
         <img src='https://kitt.lewagon.com/placeholder/users/clementLaussucq' class="card-trip-user avatar-bordered"/>
+        <% i += 1 %>
       </div>
     </div>
   </div>
